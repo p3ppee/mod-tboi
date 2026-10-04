@@ -1,0 +1,8 @@
+<entities anm2root="gfx/" version="5">
+	<entity name="67 Fly" id="980" variant="67"
+		anm2path="monsters/fly67/fly67.anm2"
+		baseHP="6" stageHP="0" boss="0" champion="1"
+		collisionDamage="1" collisionMass="3" collisionRadius="12"
+		friction="1" numGridCollisionPoints="8" shadowSize="8"
+		portrait="-1" />
+</entities>
