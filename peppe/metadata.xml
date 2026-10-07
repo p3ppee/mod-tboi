@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>peppe</name>
+    <directory>peppe</directory>
+    <id>3814646430</id>
+    <description>First mod by me.
+Added an osu! passive item
+(the probability of finding it in the first treasur room is around 100% ;)    )
+p3ppe
+bye</description>
+    <version>1.2</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Items"/>
+</metadata>

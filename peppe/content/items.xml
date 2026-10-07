@@ -1,0 +1,4 @@
+<items gfxroot="gfx/items/" version="1">
+    <passive id="1" name="osu!" gfx="osu.png" description="welcome to osu!" quality="2" cache="speed shotspeed damage" />
+
+</items>

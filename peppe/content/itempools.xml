@@ -1,0 +1,26 @@
+<ItemPools>
+    <Pool Name="boss">
+        <Item Name="osu!" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="shop">
+        <Item Name="osu!" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="treasure">
+        <Item Name="osu!" Weight="1000" DecreaseBy="0.3" RemoveO="0.1"/>
+    </Pool>
+    <Pool Name="secret">
+        <Item Name="osu!" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="greedBoss">
+        <Item Name="osu!" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="greedShop">
+        <Item Name="osu!" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="greedTreasure">
+        <Item Name="osu!" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="greedSecret">
+        <Item Name="osu!" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+    </Pool>
+</ItemPools>
