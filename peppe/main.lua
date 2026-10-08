@@ -2,20 +2,37 @@ local mod = RegisterMod("peppe", 1)
 local osu = Isaac.GetItemIdByName("osu!")
 print("osu id: " .. osu)
 local damageOsuDamage = 1
+local damageDenjuDamage = 1
+local damageMicheleDamage = 2.5
 local speedOsu = 0.3
 local shotSpeedOsu = 0.2
+local shotSpeedMichele = - 0.1
+local sizeDenju = 0.5
+local rangeMichele = - 0.5
 
 function mod:EvaluateCache(player, cacheFlags)
-    local itemCount = player:GetCollectibleNum(osu)
+    local itemCountOsu = player:GetCollectibleNum(osu)
+    local itemCountDenju = player:GetCollectibleNum(denju)
+    local itemCountOsu = player:GetCollectibleNum(michele)
+    
     if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
-        local damageToAdd = damageOsuDamage * itemCount
+        local damageToAddOsu = damageOsuDamage * itemCountOsu
+        local damageToAddDenju = damageDenjuDamage * itemCountDenju
+        local damageToAddMichele = damageMicheleDamage * itemCountMichele
+        local damageToAdd = damageToAddOsu + damageToAddDenju + damageToAddMichele
         player.Damage = player.Damage + damageToAdd
     end
     if cacheFlags & CacheFlag.CACHE_SPEED == CacheFlag.CACHE_SPEED then
         player.MoveSpeed = player.MoveSpeed + (speedOsu * itemCount)
     end
     if cacheFlags & CacheFlag.CACHE_SHOTSPEED == CacheFlag.CACHE_SHOTSPEED then
-        player.ShotSpeed = player.ShotSpeed + (shotSpeedOsu * itemCount) 
+        player.ShotSpeed = player.ShotSpeed + (shotSpeedOsu * itemCount) + (shotSpeedMichele * itemCountMichele)
+    end
+    if cacheFlags & CacheFlag.CACHE_SIZE == CacheFlag.CACHE_SIZE then
+        player.Size = player.Size + (sizeDenju * itemCountDenju)
+    end
+    if cacheFlags & CacheFlag.CACHE_RANGE == CacheFlag.CACHE_RANGE then
+        player.Range = player.Range + (rangeMichele * itemCountMichele)
     end
 
 
