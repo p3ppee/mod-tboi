@@ -27,10 +27,10 @@ function mod:EvaluateCache(player, cacheFlags)
         player.Damage = player.Damage + damageToAdd
     end
     if cacheFlags & CacheFlag.CACHE_SPEED == CacheFlag.CACHE_SPEED then
-        player.MoveSpeed = player.MoveSpeed + (speedOsu * itemCount)
+        player.MoveSpeed = player.MoveSpeed + (speedOsu * itemCountOsu)
     end
     if cacheFlags & CacheFlag.CACHE_SHOTSPEED == CacheFlag.CACHE_SHOTSPEED then
-        player.ShotSpeed = player.ShotSpeed + (shotSpeedOsu * itemCount) + (shotSpeedMichele * itemCountMichele)
+        player.ShotSpeed = player.ShotSpeed + (shotSpeedOsu * itemCountOsu) + (shotSpeedMichele * itemCountMichele)
     end
     if cacheFlags & CacheFlag.CACHE_SIZE == CacheFlag.CACHE_SIZE then
         player.Size = player.Size + (sizeDenju * itemCountDenju)
