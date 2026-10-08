@@ -1,6 +1,10 @@
 local mod = RegisterMod("peppe", 1)
 local osu = Isaac.GetItemIdByName("osu!")
+local denju = Isaac.GetItemIdByName("denju")
+local michele = Isaac.GetItemIdByName("michele")
 print("osu id: " .. osu)
+print("denju id: " .. denju)
+print("michele id: " .. michele)
 local damageOsuDamage = 1
 local damageDenjuDamage = 1
 local damageMicheleDamage = 2.5
