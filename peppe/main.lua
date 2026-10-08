@@ -17,7 +17,7 @@ local rangeMichele = - 0.5
 function mod:EvaluateCache(player, cacheFlags)
     local itemCountOsu = player:GetCollectibleNum(osu)
     local itemCountDenju = player:GetCollectibleNum(denju)
-    local itemCountOsu = player:GetCollectibleNum(michele)
+    local itemCountMichele = player:GetCollectibleNum(michele)
     
     if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
         local damageToAddOsu = damageOsuDamage * itemCountOsu
@@ -33,10 +33,10 @@ function mod:EvaluateCache(player, cacheFlags)
         player.ShotSpeed = player.ShotSpeed + (shotSpeedOsu * itemCountOsu) + (shotSpeedMichele * itemCountMichele)
     end
     if cacheFlags & CacheFlag.CACHE_SIZE == CacheFlag.CACHE_SIZE then
-        player.Size = player.Size + (sizeDenju * itemCountDenju)
+        player.SpriteScale = player.SpriteScale + (sizeDenju * itemCountDenju)
     end
     if cacheFlags & CacheFlag.CACHE_RANGE == CacheFlag.CACHE_RANGE then
-        player.Range = player.Range + (rangeMichele * itemCountMichele)
+        player.TearRange = player.TearRange + (rangeMichele * itemCountMichele) * 40
     end
 
 
