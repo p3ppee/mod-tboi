@@ -1,7 +1,7 @@
 <items gfxroot="gfx/items/" version="1">
-    <passive id="1" name="osu!" gfx="osu.png" description="welcome to osu!" quality="2" cache="speed shotspeed damage" />
-    <passive1 id="1" name="denju" gfx="denju.png" description="centrocampista israeliano" cache="size damage" />
-    <passive2 id="1" name="michele" gfx="michele.png" description="peggio di chernobyl" cache="range damage shotspeed" />
+    <passive name="osu!" gfx="osu.png" description="welcome to osu!" quality="2" cache="speed shotspeed damage" />
+    <passive name="denju" gfx="denju.png" description="centrocampista israeliano" quality="2" cache="size damage" />
+    <passive name="michele" gfx="michele.png" description="peggio di chernobyl" quality="1" cache="range damage shotspeed" />
     
     
     
