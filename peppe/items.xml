@@ -1,0 +1,8 @@
+<items gfxroot="gfx/items/" version="1">
+    <passive name="osu!" gfx="osu.png" description="welcome to osu!" quality="2" cache="speed shotspeed damage" />
+    <passive name="denju" gfx="denju.png" description="centrocampista israeliano" quality="2" cache="size damage" />
+    <passive name="michele" gfx="michele.png" description="peggio di chernobyl" quality="1" cache="range damage shotspeed" />
+    <active name="lattosio" gfx="lattosio.png" description="magnitudo 15!" quality="3" maxcharges="4" chargetype="normal" />
+    
+    
+</items>
