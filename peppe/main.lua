@@ -3,29 +3,37 @@ local osu = Isaac.GetItemIdByName("osu!")
 local denju = Isaac.GetItemIdByName("denju")
 local michele = Isaac.GetItemIdByName("michele")
 local lattosio = Isaac.GetItemIdByName("lattosio")
+local tettamanti = Isaac.GetItemByName("tettamanti")
 print("osu id: " .. osu)
 print("denju id: " .. denju)
 print("michele id: " .. michele)
 print("lattosio id: " .. lattosio)
+print("andrea id: " .. tettamanti)
 local damageOsuDamage = 1
 local damageDenjuDamage = 1
 local damageMicheleDamage = 2.5
-local speedOsu = 0.3
+local damageTettamanti = 2
 local shotSpeedOsu = 0.2
 local shotSpeedMichele = - 0.1
 local sizeDenju = 1.5
+local sizeTettamanti = 2.3
 local rangeMichele = - 0.5
+
+
 
 function mod:EvaluateCache(player, cacheFlags)
     local itemCountOsu = player:GetCollectibleNum(osu)
     local itemCountDenju = player:GetCollectibleNum(denju)
     local itemCountMichele = player:GetCollectibleNum(michele)
+    local itemCountTettamanti = plpayer:GetCollectibleNum(tettamanti)
     
     if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
         local damageToAddOsu = damageOsuDamage * itemCountOsu
         local damageToAddDenju = damageDenjuDamage * itemCountDenju
         local damageToAddMichele = damageMicheleDamage * itemCountMichele
-        local damageToAdd = damageToAddOsu + damageToAddDenju + damageToAddMichele
+        local damageToAddTettamanti = DamageTettamanti * itemCountTettamanti
+        local damageToAdd = damageToAddOsu + damageToAddDenju + damageToAddMichele + damageToAddTettamanti
+        
         player.Damage = player.Damage + damageToAdd
     end
     if cacheFlags & CacheFlag.CACHE_SPEED == CacheFlag.CACHE_SPEED then
@@ -37,6 +45,9 @@ function mod:EvaluateCache(player, cacheFlags)
     if cacheFlags & CacheFlag.CACHE_SIZE == CacheFlag.CACHE_SIZE then
         if itemCountDenju > 0 then
             player.SpriteScale = player.SpriteScale * (sizeDenju * itemCountDenju)
+        end
+        if itemCountTettamanti > 0 then
+            player.SpriteScale = player.SpriteScale * (sizeTettamanti * itemCountDenju)
         end
     end
     if cacheFlags & CacheFlag.CACHE_RANGE == CacheFlag.CACHE_RANGE then
