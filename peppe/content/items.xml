@@ -4,6 +4,7 @@
     <passive name="michele" gfx="michele.png" description="peggio di chernobyl" quality="1" cache="range damage shotspeed" />
     <active name="lattosio" gfx="lattosio.png" description="magnitudo 15!" quality="3" maxcharges="4" chargetype="normal" />
     <passive name="tettamanti" gfx="tettamanti.png" description="l'uomo più duro del virgilio" quality="1" cache="size damage" />
+    <active name="mohassino" gfx="mohassino.png" description="Il mohassino di Praga" quality="2"maxcharges="4" chargetype="normal" />
     
     
 </items>
