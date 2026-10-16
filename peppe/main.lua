@@ -3,7 +3,7 @@ local osu = Isaac.GetItemIdByName("osu!")
 local denju = Isaac.GetItemIdByName("denju")
 local michele = Isaac.GetItemIdByName("michele")
 local lattosio = Isaac.GetItemIdByName("lattosio")
-local tettamanti = Isaac.GetItemIDByName("tettamanti")
+local tettamanti = Isaac.GetItemIdByName("tettamanti")
 local mohassino = Isaac.GetItemIdByName("mohassino")
 print("osu id: " .. osu)
 print("denju id: " .. denju)
@@ -28,7 +28,7 @@ function mod:EvaluateCache(player, cacheFlags)
     local itemCountOsu = player:GetCollectibleNum(osu)
     local itemCountDenju = player:GetCollectibleNum(denju)
     local itemCountMichele = player:GetCollectibleNum(michele)
-    local itemCountTettamanti = plpayer:GetCollectibleNum(tettamanti)
+    local itemCountTettamanti = player:GetCollectibleNum(tettamanti)
     
     if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
         local damageToAddOsu = damageOsuDamage * itemCountOsu
