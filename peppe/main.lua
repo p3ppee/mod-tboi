@@ -3,17 +3,20 @@ local osu = Isaac.GetItemIdByName("osu!")
 local denju = Isaac.GetItemIdByName("denju")
 local michele = Isaac.GetItemIdByName("michele")
 local lattosio = Isaac.GetItemIdByName("lattosio")
-local tettamanti = Isaac.GetItemByName("tettamanti")
+local tettamanti = Isaac.GetItemIDByName("tettamanti")
+local mohassino = Isaac.GetItemIdByName("mohassino")
 print("osu id: " .. osu)
 print("denju id: " .. denju)
 print("michele id: " .. michele)
 print("lattosio id: " .. lattosio)
 print("andrea id: " .. tettamanti)
+print("mohassino id: " .. mohassino)
 local damageOsuDamage = 1
 local damageDenjuDamage = 1
 local damageMicheleDamage = 2.5
 local damageTettamanti = 2
 local shotSpeedOsu = 0.2
+local speedOsu = 2
 local shotSpeedMichele = - 0.1
 local sizeDenju = 1.5
 local sizeTettamanti = 2.3
@@ -31,7 +34,7 @@ function mod:EvaluateCache(player, cacheFlags)
         local damageToAddOsu = damageOsuDamage * itemCountOsu
         local damageToAddDenju = damageDenjuDamage * itemCountDenju
         local damageToAddMichele = damageMicheleDamage * itemCountMichele
-        local damageToAddTettamanti = DamageTettamanti * itemCountTettamanti
+        local damageToAddTettamanti = damageTettamanti * itemCountTettamanti
         local damageToAdd = damageToAddOsu + damageToAddDenju + damageToAddMichele + damageToAddTettamanti
         
         player.Damage = player.Damage + damageToAdd
@@ -44,10 +47,10 @@ function mod:EvaluateCache(player, cacheFlags)
     end
     if cacheFlags & CacheFlag.CACHE_SIZE == CacheFlag.CACHE_SIZE then
         if itemCountDenju > 0 then
-            player.SpriteScale = player.SpriteScale * (sizeDenju * itemCountDenju)
+            player.SpriteScale = player.SpriteScale * (sizeDenju ^ itemCountDenju)
         end
         if itemCountTettamanti > 0 then
-            player.SpriteScale = player.SpriteScale * (sizeTettamanti * itemCountDenju)
+            player.SpriteScale = player.SpriteScale * (sizeTettamanti * itemCountTettamanti)
         end
     end
     if cacheFlags & CacheFlag.CACHE_RANGE == CacheFlag.CACHE_RANGE then
@@ -75,7 +78,38 @@ function mod:LattosioUse(item, rng, player, useFlags, activeSlot)
     
 end
 
+function mod:MohassinoUse(item, rng, player,useFlags, activeShot)
+    local numMonete = math.random(20)
+    local flag = 0
+    local effects = player:GetEffects()
+    effects:AddCollectibleEffect(CollectibleType.COLLECTIBLE_ANEMIC, true)
+    for numMonete do
+        local pos = room:FindFreePickupSpawnPosition(player.Position, 0, true)
+        Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, CoinSubType.COIN_PENNY, pos, Vector.Zero, nil)
+        if numMonete == 20 then
+            local pos = room:FindFreePickupSpawnPosition(player.Position, 0, true)
+            Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, CoinSubType.COIN_STICKYNICKEL, pos, Vector.Zero, nil)
+    end
+    while flag do
+        if player:GetHearts() == 0 then
+            player:TakeDamage(2, DamageFlag.DAMAGE_RED_HEARTS, EntityRef(player), 30)
+        else
+            player:TakeDamage(2, 0, EntityRef(player), 30)
+    end
+        flag = 1
+            
+    return {
+        Discharge = true,
+        Remove = false,
+        ShowAnim = true
+        }
+end
+    
+    
+        
+    
 
 
+mod:AddCallback(ModCallbacks.MC_USE_ITEM, mod.MohassinoUse, mohassino)
 mod:AddCallback(ModCallbacks.MC_USE_ITEM, mod.LattosioUse, lattosio)
 mod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, mod.EvaluateCache)
