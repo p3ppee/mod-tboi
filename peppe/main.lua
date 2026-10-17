@@ -93,7 +93,7 @@ function mod:MohassinoUse(item, rng, player,useFlags, activeShot)
     end
 
     
-    if player:GetHearts() == 0 then
+    if player:GetHearts() > 0 then
         player:TakeDamage(2, DamageFlag.DAMAGE_RED_HEARTS, EntityRef(player), 30)
     else
         player:TakeDamage(2, 0, EntityRef(player), 30)
