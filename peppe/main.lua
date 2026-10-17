@@ -79,24 +79,27 @@ function mod:LattosioUse(item, rng, player, useFlags, activeSlot)
 end
 
 function mod:MohassinoUse(item, rng, player,useFlags, activeShot)
-    local numMonete = math.random(20)
-    local flag = 0
+    local room = Game():GetRoom()
+    local numMonete = math.random(20) + 1
     local effects = player:GetEffects()
     effects:AddCollectibleEffect(CollectibleType.COLLECTIBLE_ANEMIC, true)
-    for numMonete >= 0 do
+    for i = 1, numMonete do
         local pos = room:FindFreePickupSpawnPosition(player.Position, 0, true)
         Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, CoinSubType.COIN_PENNY, pos, Vector.Zero, nil)
-        if numMonete == 20 then
-            local pos = room:FindFreePickupSpawnPosition(player.Position, 0, true)
-            Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, CoinSubType.COIN_STICKYNICKEL, pos, Vector.Zero, nil)
     end
-    while flag do
-        if player:GetHearts() == 0 then
-            player:TakeDamage(2, DamageFlag.DAMAGE_RED_HEARTS, EntityRef(player), 30)
-        else
-            player:TakeDamage(2, 0, EntityRef(player), 30)
+    if numMonete == 20 then
+        local pos = room:FindFreePickupSpawnPosition(player.Position, 0, true)
+        Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, CoinSubType.COIN_STICKYNICKEL, pos, Vector.Zero, nil)
     end
-        flag = 1
+
+    
+    if player:GetHearts() == 0 then
+        player:TakeDamage(2, DamageFlag.DAMAGE_RED_HEARTS, EntityRef(player), 30)
+    else
+        player:TakeDamage(2, 0, EntityRef(player), 30)
+    end
+    
+        
             
     return {
         Discharge = true,
