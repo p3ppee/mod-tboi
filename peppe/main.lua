@@ -83,7 +83,7 @@ function mod:MohassinoUse(item, rng, player,useFlags, activeShot)
     local flag = 0
     local effects = player:GetEffects()
     effects:AddCollectibleEffect(CollectibleType.COLLECTIBLE_ANEMIC, true)
-    for numMonete > 0 do
+    for numMonete >= 0 do
         local pos = room:FindFreePickupSpawnPosition(player.Position, 0, true)
         Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, CoinSubType.COIN_PENNY, pos, Vector.Zero, nil)
         if numMonete == 20 then
