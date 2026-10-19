@@ -5,22 +5,27 @@ local michele = Isaac.GetItemIdByName("michele")
 local lattosio = Isaac.GetItemIdByName("lattosio")
 local tettamanti = Isaac.GetItemIdByName("tettamanti")
 local mohassino = Isaac.GetItemIdByName("mohassino")
+local accendino = Isaac.GetItemIdByName("accendino")
 print("osu id: " .. osu)
 print("denju id: " .. denju)
 print("michele id: " .. michele)
 print("lattosio id: " .. lattosio)
 print("andrea id: " .. tettamanti)
 print("mohassino id: " .. mohassino)
+print("accendino id: " .. accendino)
 local damageOsuDamage = 1
 local damageDenjuDamage = 1
 local damageMicheleDamage = 2.5
-local damageTettamanti = 2
+local damageTettamantiDamage = 2
+local damageAccendinoDamage = 1
 local shotSpeedOsu = 0.2
 local speedOsu = 2
 local shotSpeedMichele = - 0.1
 local sizeDenju = 1.5
 local sizeTettamanti = 2.3
 local rangeMichele = - 0.5
+local rangeAccendino = -0.2
+
 
 
 
@@ -29,13 +34,15 @@ function mod:EvaluateCache(player, cacheFlags)
     local itemCountDenju = player:GetCollectibleNum(denju)
     local itemCountMichele = player:GetCollectibleNum(michele)
     local itemCountTettamanti = player:GetCollectibleNum(tettamanti)
+    local itemCountAccendino = player:GetCollectibleNum(accendino)
     
     if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
         local damageToAddOsu = damageOsuDamage * itemCountOsu
         local damageToAddDenju = damageDenjuDamage * itemCountDenju
         local damageToAddMichele = damageMicheleDamage * itemCountMichele
-        local damageToAddTettamanti = damageTettamanti * itemCountTettamanti
-        local damageToAdd = damageToAddOsu + damageToAddDenju + damageToAddMichele + damageToAddTettamanti
+        local damageToAddTettamanti = damageTettamantiDamage * itemCountTettamanti
+        local damageToAddAccendino = damageAccendinoDamage * itemCountAccendino
+        local damageToAdd = damageToAddOsu + damageToAddDenju + damageToAddMichele + damageToAddTettamanti + damageAccendinoDamage
         
         player.Damage = player.Damage + damageToAdd
     end
@@ -54,7 +61,7 @@ function mod:EvaluateCache(player, cacheFlags)
         end
     end
     if cacheFlags & CacheFlag.CACHE_RANGE == CacheFlag.CACHE_RANGE then
-        player.TearRange = player.TearRange + (rangeMichele * itemCountMichele) * 40
+        player.TearRange = player.TearRange + (rangeMichele * itemCountMichele) + rangeAccendino * itemCountAccendino * 40
     end
 end
 
