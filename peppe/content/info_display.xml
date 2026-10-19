@@ -1,6 +1,13 @@
 <collectibles>
     <collectible id="osu">
         <info text="Welcome to osu!"/>
-        <info text="
+        <info text=" + 1 damage" />
+        <info text=" + 0.2 shot speed" />
+        <info text=" + 2 speed" />
+    </collectible>
+    <collectible id="denju">
+        <info text="POLPA"/>
+        <info text=" + 1 damage" />
+        <info text=" * 1.5 size" />
     </collectible>
 </collectibles>
