@@ -6,6 +6,7 @@ local lattosio = Isaac.GetItemIdByName("lattosio")
 local tettamanti = Isaac.GetItemIdByName("tettamanti")
 local mohassino = Isaac.GetItemIdByName("mohassino")
 local accendino = Isaac.GetItemIdByName("accendino")
+local lavoro = Isaac.GetItemIdByName("lav*ro")
 print("osu id: " .. osu)
 print("denju id: " .. denju)
 print("michele id: " .. michele)
@@ -13,13 +14,15 @@ print("lattosio id: " .. lattosio)
 print("andrea id: " .. tettamanti)
 print("mohassino id: " .. mohassino)
 print("accendino id: " .. accendino)
+print("lav*ro id: " .. lavoro)
 local damageOsuDamage = 1
 local damageDenjuDamage = 1
 local damageMicheleDamage = 2.5
 local damageTettamantiDamage = 2
 local damageAccendinoDamage = 1
-local shotSpeedOsu = 0.2
 local speedOsu = 2
+local speedLavoro = -1
+local shotSpeedOsu = 0.2
 local shotSpeedMichele = - 0.1
 local sizeDenju = 1.5
 local sizeTettamanti = 2.3
@@ -35,6 +38,7 @@ function mod:EvaluateCache(player, cacheFlags)
     local itemCountMichele = player:GetCollectibleNum(michele)
     local itemCountTettamanti = player:GetCollectibleNum(tettamanti)
     local itemCountAccendino = player:GetCollectibleNum(accendino)
+    local itemCountLavoro = player:GetCollectibleNum(lavoro)
     
     if cacheFlags & CacheFlag.CACHE_DAMAGE == CacheFlag.CACHE_DAMAGE then
         local damageToAddOsu = damageOsuDamage * itemCountOsu
@@ -47,7 +51,7 @@ function mod:EvaluateCache(player, cacheFlags)
         player.Damage = player.Damage + damageToAdd
     end
     if cacheFlags & CacheFlag.CACHE_SPEED == CacheFlag.CACHE_SPEED then
-        player.MoveSpeed = player.MoveSpeed + (speedOsu * itemCountOsu)
+        player.MoveSpeed = player.MoveSpeed + (speedOsu * itemCountOsu) + (speedLavoro * itemCountLavoro)
     end
     if cacheFlags & CacheFlag.CACHE_SHOTSPEED == CacheFlag.CACHE_SHOTSPEED then
         player.ShotSpeed = player.ShotSpeed + (shotSpeedOsu * itemCountOsu) + (shotSpeedMichele * itemCountMichele)
@@ -114,7 +118,9 @@ function mod:MohassinoUse(item, rng, player,useFlags, activeShot)
         ShowAnim = true
         }
 end
-    
+
+
+
     
         
     
