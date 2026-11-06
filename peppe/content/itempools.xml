@@ -8,6 +8,7 @@
         <Item Name="tettamanti" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="accendino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="mohassino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+        <Item Name="lav*ro" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
     </Pool>
 
     <!-- SHOP -->
@@ -19,6 +20,7 @@
         <Item Name="tettamanti" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="accendino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="mohassino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+        <Item Name="lav*ro" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
     </Pool>
 
     <!-- TREASURE -->
@@ -30,6 +32,7 @@
         <Item Name="tettamanti" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="accendino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="mohassino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+        <Item Name="lav*ro" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
     </Pool>
 
     <!-- SECRET -->
@@ -41,6 +44,7 @@
         <Item Name="tettamanti" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="accendino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="mohassino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+        <Item Name="lav*ro" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
     </Pool>
 
     <!-- GREED BOSS -->
@@ -52,6 +56,7 @@
         <Item Name="tettamanti" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="accendino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="mohassino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+        <Item Name="lav*ro" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
     </Pool>
 
     <!-- GREED SHOP -->
@@ -63,6 +68,7 @@
         <Item Name="tettamanti" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="accendino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="mohassino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+        <Item Name="lav*ro" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
     </Pool>
 
     <!-- GREED TREASURE -->
@@ -74,6 +80,7 @@
         <Item Name="tettamanti" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="accendino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="mohassino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+        <Item Name="lav*ro" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
     </Pool>
 
     <!-- GREED SECRET -->
@@ -85,5 +92,6 @@
         <Item Name="tettamanti" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="accendino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
         <Item Name="mohassino" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
+        <Item Name="lav*ro" Weight="1.7" DecreaseBy="0.3" RemoveOn="0.1"/>
     </Pool>
 </ItemPools>
